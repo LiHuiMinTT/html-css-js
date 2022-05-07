@@ -8,7 +8,12 @@
 </head>
 <body>
     <script>
-
+        const datet = new Date(2000);
+        console.log(new Date(Date.parse(new Date(2000,5))));
+        console.log(new Date(2000,5));
+        console.log(datet);
+        console.log(datet.getMonth());
+        console.log(datet.getDay());
         // let date2 = new Date(2005,4);
         // console.log(date2);//Sun May 01 2005 00:00:00 GMT+0800 (中国标准时间)
         // let date1 = new Date(Date.parse("May 01,2005"))//Sun May 01 2005 00:00:00 GMT+0800 (中国标准时间)

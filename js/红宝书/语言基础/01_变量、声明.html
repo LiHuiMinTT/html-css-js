@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //1、var声明提升而let和const没有
+        console.log(a);//undefined
+        var a = 100;
+        console.log(a);//100
+        // console.log(b);//Uncaught ReferenceError: b is not defined
+
+        /*2、const、let、var
+            var:声明范围为函数作用域
+            const、let：块级作用域
+            const定义的变量必须进行初始化const a = 100 √；const a ×
+        */
+        if(true){
+            var c = 100;
+            let d = 100;
+        }
+        console.log(c,'c');//100 'c'
+        // console.log(d);//报错，未定义d
+
+        /*
+        3、js数据类型
+            原始类型：Number String Undefined Null Symbol Boolean
+            对象：object
+        */
+        let e = undefined;
+        let e1;
+        console.log(typeof e,typeof e1);//undefined undefined
+        console.log(typeof e2);//undefined e2未定义，返回的仍然是undefined
+
+        let e3 = null;
+        console.log(typeof e3);//object 在定义一个对象时，可以初始化其为null
+
+        //Number
+        console.log(Number(NaN));//NaN
+        console.log(Number(undefined));//NaN
+        console.log(Number(null));//0
+        console.log('-*************-');
+        //布尔
+        console.log(Boolean(-1));//true 只有NaN和0才是false，其他都是true
+        console.log(Boolean(5),'boolean(5)');//true
+        console.log(true == 1);//true
+        console.log(true == 5);//false
+        console.log(Boolean(null));//false 除了null之外的任何对象都返回true
+        console.log(Boolean(NaN),'NAN');//false
+        console.log(Boolean(undefined));//false
+
+        //NaN 用0除以任何数都是NaN 涉及到NaN的操作始终返回NaN
+        console.log(0/0);//NaN
+        console.log(NaN == NaN);//false
+        console.log(isNaN('dadas'));//true
+        console.log(isNaN(122));//false
+        console.log(isNaN('123'));//false 而可以转换为123
+        console.log(parseFloat(5.000));//5
+
+        /*
+        string 本身不能被更改！！
+            NaN可以调用tostring undefined和null都不能调用，调用的话会报错
+        */
+       console.log(NaN.toString());//NaN
+    //    console.log(undefined.toString());//报错
+    //    console.log(null.toString());
+    //使用string不会报错
+    console.log(String(NaN));//undefined
+    console.log(String(undefined));//undefined
+    console.log(String(null));//null
+    console.log('2'+3 + 4);
+    </script>
+</body>
+</html>
