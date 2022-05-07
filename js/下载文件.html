@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#" id="a">下载文件</a>
+    <script>
+        const a = document.getElementById('a');
+        let xhr;
+        a.addEventListener('click',(event)=>{
+            event.preventDefault();
+            xhr = new XMLHttpRequest();
+            // xhr.setRequestHeader('Content-Type','application/pdf');
+            // xhr.responseType = 'blob';
+            // xhr.onload = (response)=>{
+            //     let blob = response;
+            //     download(blob,filename)
+            // }
+            xhr.onreadystatechange = ()=>{
+                if(xhr.readyState == 4){
+                    if(xhr.status>=200 &&xhr.status <300 || xhr.status==304){
+                        console.log(xhr.response);
+                        const a1 = document.createElement('a');
+                        a1.href = xhr.response;
+                        a1.download = '00.pdf'
+                        document.body.appendChild(a1);
+                        a1.click();
+                        document.body.removeChild(a1);
+                    }
+                }
+            };
+            xhr.open('get','http://127.0.0.1/download',true);   
+            xhr.send();
+        });
+
+        // function download(blob,file){
+        //     const a = document.createElement(a);
+        //     a.href = 
+        // }
+    </script>
+</body>
+</html>

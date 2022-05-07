@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p = new Promise((res,rej)=>{
+            setTimeout(() => {
+               console.log('一段异步操作');
+               res(3); 
+            }, 2000);
+        });
+
+        setTimeout(() => {
+            console.log(p);
+        }, 3000);
+        console.log(p,'p');
+        setTimeout(console.log,5000,1)//5秒后调用console.log函数，传入参数为1
+    </script>
+</body>
+</html>

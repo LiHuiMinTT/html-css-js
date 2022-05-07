@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>谁想挨打？？</title>
+</head>
+<body>
+    <script>
+        let value = prompt('请问谁最欠打？');;
+        let i =2;
+        if(value == '李辉民'){
+            alert('恭喜回答正确！！！！');
+        }
+        while(value!='李明辉'){
+            alert('NO NO NO,答案不对,打回重做');
+            value = prompt('这是第' + i + '次问你！请问谁最欠打？');
+            i++;
+            if(value == '李辉民'){
+                alert('恭喜回答正确！！！！');
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

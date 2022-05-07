@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dropenter" style="height:200px; width:100%;background-color: gray;border: solid 2px red;" draggable="true"></div>
+
+    <div id="dropenter" style="height:200px; width:100%;background-color: gray;border: solid 2px red;" draggable="false"></div>
+    <script>
+        const target =  document.getElementById('dropenter');
+        function dropfun(event){
+            let info ='',output=document.getElementsByTagName('div')[0],files,i,len;
+            event.preventDefault();
+            if(event.type =='drop'){
+                files = event.dataTransfer.files;
+                i=0;
+                len = files.length;
+                while(i<len){
+                    info+=`${files[i].name}(${files[i].type},${files[i].size}bytes)<br>`;
+                    i++;
+                }
+            }
+            output.innerHTML = info;
+            console.log(info);
+        };
+        target.addEventListener('drop',(event)=>{
+            event.preventDefault();
+            let info ='',output=document.getElementsByTagName('div')[0],files,i,len;
+            
+            if(event.type =='drop'){
+                files = event.dataTransfer.files;
+                i=0;
+                len = files.length;
+                while(i<len){
+                    info+=`${files[i].name}(${files[i].type},${files[i].size}bytes)<br>`;
+                    i++;
+                }
+            }
+            output.innerHTML = info;
+            console.log(info);
+        });
+        target.addEventListener('dropenter',(event)=>{
+            event.preventDefault();
+            let info ='',output=document.getElementsByTagName('div')[0],files,i,len;
+            if(event.type =='drop'){
+                files = event.dataTransfer.files;
+                i=0;
+                len = files.length;
+                while(i<len){
+                    info+=`${files[i].name}(${files[i].type},${files[i].size}bytes)<br>`;
+                    i++;
+                }
+            }
+            output.innerHTML = info;
+            console.log(info);
+        });
+        target.addEventListener('dropover',(event)=>{
+            event.preventDefault();
+            let info ='',output=document.getElementsByTagName('div')[0],files,i,len;
+            if(event.type =='drop'){
+                files = event.dataTransfer.files;
+                i=0;
+                len = files.length;
+                while(i<len){
+                    info+=`${files[i].name}(${files[i].type},${files[i].size}bytes)<br>`;
+                    i++;
+                }
+            }
+            output.innerHTML = info;
+            console.log(info);
+        });
+        console.log(target);
+        console.log(document.hidden);
+        document.addEventListener('visibilitychange',(event)=>{
+            console.log(document.visibilityState);
+        });
+        document.onvisibilitychange=function(event){
+            console.log(document.visibilityState);
+            console.log('11');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">bt</button>
+    <div id="div1" style="height: 150px;width: 150px;border: solid 2px black;background-color: cadetblue;"></div>
+    <script>
+       const btn =  document.getElementById('btn1');
+       console.log('000');
+       btn.addEventListener('click',(event)=>{
+           fetch('http://127.0.0.1/user',{
+               method:'get',
+           }).then((response)=>{
+               (response.text()).then((data)=>{
+                    document.getElementById('div1').innerText = data;
+               })
+           },(err)=>{
+               console.log(err);
+           })
+       })
+    </script>
+</body>
+</html>

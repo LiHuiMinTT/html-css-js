@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>datalist为输入框设置一个可选内容集合</title>
+</head>
+<body>
+    <!-- 通过datalist的id或者name属性进行指定,多了个结构而已，（input）输入框定义前也可用可用 -->
+<!-- 超出作用域，同样可用 -->
+    <select id = 'myfoods1' list="foods1"> </select>
+        <datalist id = "foods1" name="foods1">
+            <option value="rice">dami</option>
+            <option value="banana">xiangjiao</option>
+        </datalist>
+        <input type="text" list="foods1">
+</body>
+</html>

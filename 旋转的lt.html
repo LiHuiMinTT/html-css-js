@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show Time</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+        }
+        .zz{
+            position: relative;
+            left: 30%;
+            top:300px;
+            display: inline-block;
+            height:200px;
+            background-color: white;
+            border: 3px solid white;
+            z-index: -1;
+        }
+        @keyframes img_ratate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .img{
+            height: 100px;
+            width: 100px;
+            animation: img_ratate;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        #img1{
+            position: absolute;
+            left: 28%;
+            top: 250PX;
+        }
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="position: relative;">
+        <img src="00.png" alt="" id="img1">
+        <div class="zz"></div>
+        <button onclick="start()">大风来了！李明辉开始旋转吧！</button>
+        <BUTTON onclick="cheerup()" style="position: absolute; left: 27%;top:550px;">一键为李明辉加速</BUTTON>
+    </div>
+    <script>
+        function start(){
+            const img = document.getElementById('img1')
+            img.classList.add('img')
+            console.log(0);
+        }
+        function cheerup(){
+            const img = document.getElementById('img1')
+            img.style.animationDuration = '0.5s';
+            setTimeout(() => {
+                 let a = confirm('转太快了!是否要救救李明辉');
+                 if(a){
+                    img.style.animationDuration = '2s';
+                    setTimeout(() => {
+                        alert('谢谢甜甜宝贝，我已经平安了')
+                    }, 1000);
+                 }
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

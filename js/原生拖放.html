@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div" style="min-height: 1500px;min-width: 200px; border: solid 2px black;" draggable="true"></div>
+    <img src="pic.jpg" alt="pic">
+    <span>111</span>
+    <script>
+        let target = document.getElementById('div');
+        target.addEventListener('dragenter',(event)=>{
+            console.log('0000');
+            event.preventDefault()
+            console.log(event.dataTransfer.dropEffect);
+            event.dataTransfer.dropEffect = 'move';
+            // target.style.background = 'yellow';
+        })
+        target.addEventListener('dragover',(event)=>{
+            event.preventDefault()
+        })
+        target.addEventListener('drop',(event)=>{
+            // event.preventDefault();
+            // console.log(event.dataTransfer.getData('url'));
+            // console.log(event.dataTransfer.getData('Text'));
+            // console.log(event.dataTransfer.files[0] instanceof File);//true
+        })
+        document.getElementsByTagName('img')[0].addEventListener('dragstart',(event)=>{
+            console.log('start');
+            console.log(event.dataTransfer.effectAllowed);
+            event.dataTransfer.effectAllowed = 'move';
+            console.log(event.dataTransfer.effectAllowed);
+        })
+        document.getElementsByTagName('img')[0].addEventListener('drag',(event)=>{
+            event.preventDefault();
+            console.log(event.dataTransfer.effectAllowed);
+        })
+        document.getElementsByTagName('img')[0].addEventListener('dragend',(event)=>{
+            event.preventDefault()
+            console.log(event.dataTransfer.effectAllowed);
+        })
+    </script>
+</body>
+</html>

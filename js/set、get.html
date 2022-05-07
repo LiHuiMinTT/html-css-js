@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <SCript>
+        // const  p = {
+        //     _name:'李辉民',
+        //     set name(value){
+        //         console.log('set调用了');
+        //         this._name = value;
+        //     },
+        //     get name(){
+        //         return this._name;
+        //     }
+        // };
+       
+        // console.log(p);
+        // let o = {
+        //     [p]:'222',
+        //     [my]:'my'
+        // }
+        // function my(){}
+        // console.log(o);
+        // Object.defineProperty(p,'age',{
+        //     configurable:true,
+        //     enumerable:true,
+        //     set(value){this._age = value;console.log('p.age set');},
+        //     get(){
+        //         return this._age;
+        //     }
+        // });
+        // console.log(p.age); 
+        // p.age = 2;
+        // console.log(p.age);
+        // console.log(p.name);
+        // p.name = 12;
+        // console.log(p.name);
+
+        // const p = {};
+        // Object.defineProperty(p,'name',{
+        //     value:'Lihuimin',
+        //     enumerable:false,
+        //     configurable:true,
+        //     writable:true
+        // });
+        // console.log(p);
+        // console.log(Object.keys(p));//p的name属性不可枚举，所以无法获取
+        // console.log(Object.getOwnPropertyNames(p));//name
+        // for (const key in object) {
+        //     if (Object.hasOwnProperty.call(object, key)) {
+        //         const element = object[key];
+                
+        //     }
+        // }
+        // console.log(P);
+        // class P{
+
+        // };
+        // console.log(P);
+        // console.log(show);
+        // //不可以自动提升
+        // // let show = function(){
+        // //     console.log('');
+        // // }
+        // //可以提升
+        // function show(){
+
+        // }
+        // class Person{
+        //     get name(){
+        //         return 'lihuimin';
+        //     }
+        //     static show(){
+        //         console.log('静态1');
+        //     }
+        //     static load(){
+        //         console.log('load');
+        //     }
+        // }
+        // Person.prototype.id = '001';
+        // console.log(typeof Person);//function
+        // console.dir(Person);
+        // const p1 = new Person();
+        // console.log(p1.id,'pid');//001
+        // console.log(p1.name);//lihimin
+        // Person.show();
+        // Person.load();
+        // console.log(Person.prototype);
+        // console.dir(Person.constructor);
+        // console.log(Person.constructor === Person.constructor.prototype.constructor);//true
+        // // class student extends Person{
+        // //     constructor(){}
+        // // };
+        // // new student();
+
+        // function arg(...values){
+        //     console.log(values);//[1, 2, 3, 4, 5]
+        //     console.log(arguments instanceof Array);//false
+        // }
+        // arg(1,2,3,4,5);
+        // function te(i,j,k){
+        //     // console.log(arguments);
+        //     // arguments[0] = 2;
+        //     // console.log(i); //2
+        //     console.log(arguments[0]);//1
+        //     i = 3;
+        //      console.log(arguments[0],'0');//3 '0'
+        //      arguments[1] = 5;//对于未定义的参数而言，设置arguments并不会使形参有值
+        //      console.log(arguments[1]);//5
+        //      console.log(j);//undefined
+        // }
+        // te(1);
+        // let t = {
+        //     a:'0',
+        //     show(){
+        //         let b = 2;
+        //         console.log(this.a);//0
+        //         let that = this;
+        //         return function(){
+        //             return that.a;//undefined
+        //         }
+        //     }
+        // }
+        // console.log(t.show()());//undefined
+
+        //私有变量
+        // class P{
+        //     constructor(name,age){
+        //         let _name = name;
+        //         return {
+        //             age, 
+        //             getname(){
+        //                 return _name;
+        //             },
+        //             setname(value){
+        //                 _name = value;
+        //             }
+        //         }
+        //     }
+        // }
+
+        // //私有变量实现1
+        // const p1 = new P('Li',22);
+        // console.log(p1._name);//undefined
+        // console.log(p1.getname());//Li
+        // p1.setname('wang');
+        // console.log(p1.age);
+        // console.log(p1.getname());
+
+        //symbol实现
+        // function Person(value){
+        //     let name = Symbol('name');
+        //     this[name] = value;
+        //     this.getname = ()=>{
+        //         return this[name];
+        //     };
+        //     this.setname = (value)=>{
+        //         this[name] = value;
+        //     }
+        // }
+        // const p1 = new Person('lihuimin');
+        // console.log(p1.getname());
+        // p1.setname('oo');
+        // console.log(p1.getname());
+        //静态私有变量实现失败
+        // function zz(value){
+        //         this._name = value;
+        //     };
+
+        // const Person= function(name,age){
+        //     const ZZ = new zz(name);
+        //     return{
+        //         age,
+        //         setname(name){
+        //             ZZ._name = name; 
+        //         },
+        //         getname(){
+        //             return ZZ._name;
+        //         }
+        //     }
+        // }
+        // const p2 =new Person('lihuimin',23);
+        // console.log(p2.age);//23
+        // console.log(p2.name);//undefined
+        // console.log(p2.getname());//lihuimin
+        // p2.setname('liyi1');
+        // console.log(p2.getname());//liyi1
+        // const p3 = new Person('litian',24);
+        // p3.setname(';;;;')
+        // console.log(p3.getname());
+
+        // console.dir(p2);
+
+        //
+        // (function(){
+        //     let _name = '';
+        //     Person = function(value){
+        //         _name = value
+        //     };
+        //     Person.prototype.getname = ()=>{
+        //         return _name;
+        //     };
+        //     Person.prototype.setname = (value)=>{
+        //         _name = value;
+        //     };
+        // })();
+        // const p1 = new Person('gsf');
+        // console.log(p1.getname());-
+        // p1.setname('lhm');
+        // console.log(p1.getname());
+        // let p2  = new Person('zh');
+        // console.log(p1.getname());//zh  静态共享属性
+        // console.log(p1.getname());//zh
+
+        // console.log(Promise.resolve(new Promise((resolve,reject)=>{
+        //     reject  ('lll');
+        // })));
+        // async function myf(){
+        //     return await '1';
+        // }
+        // console.log(myf().then((data)=>{
+        //     console.log(data);
+        // }))
+        // console.log('tongbu');
+        // delay(2000);
+        // async function delay(num){
+        //     return await new Promise((resolve)=>{
+        //         setTimeout(() => {
+        //             console.log('已经wait2s');
+        //         }, num);
+        //     })
+        // };
+        // console.log('???');
+//await会解包
+        async function sleep(t){
+            return await new Promise((resolve)=>{
+                setTimeout(() => {
+                    resolve('222')
+                }, t*1000);
+            })
+        }
+        (async function(){
+            let t = await sleep(2);
+            console.log(t);
+            console.log('22222');
+
+
+
+
+
+
+
+
+        })();
+    </SCript>
+</body>
+</html>

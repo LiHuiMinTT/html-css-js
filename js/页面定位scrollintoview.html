@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="bt">查看span</button>
+        <div style="height: 5000px;" id="id"></div>
+        <span id="span">span000</span>
+        <div style="height: 5000px;"></div>
+        <button id="bt1">回到顶部</button>
+        <script>
+            console.log(document.getElementById('id').style.cssText,'00');
+            console.log(document.getElementById('id').style.length,'00');
+            console.log(document.getElementById('id').style[0],'00');
+            document.getElementById('bt').addEventListener('click',()=>{
+                document.getElementById('span').scrollIntoView({block:'center',behavior:"smooth",inline:'center'});
+            });
+            document.getElementById('bt1').addEventListener('click',()=>{
+                document.getElementById('bt').scrollIntoView({block:'center',behavior:"smooth",inline:'center'});
+            });
+        </script>
+</body>
+</html>

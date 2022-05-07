@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!--meter html5新标签，通过进度条来显示度量0-1
+            value:当前值
+            min：最小值
+            max：最大值  -->
+      <meter value="20" min="0" max="50">40%</meter>
+      <meter value="0.2">20%</meter>
+      <!-- 直接指定value = 0.6 
+            相当于直接度量60%-->
+      <meter value="0.6"></meter>
+      <!-- low属性规定最小值
+            high规定最大值
+            一旦实际value不在范围，则会进行特殊提示 -->
+        <meter value="0.1" low="0.2" high="0.8"></meter>
+</body>
+</html>

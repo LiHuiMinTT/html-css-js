@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" style="background-color:green;height:50px;width:50px"><span>Hello</span></div>
+    <script>
+        const div1 = document.getElementById('div1');
+        console.log(div1.style);//CSSStyleDeclaration获取的是个对象
+        console.log(div1.getAttribute('style'));//获取到css对应字符串  background-color:green;height:50px;width:50px
+        //设置属性
+        setTimeout(() => {
+            div1.setAttribute('style','background-color:green;height:100px;width:100px');
+            div1.setAttribute('hh','dsdsd');
+            console.log(div1.getAttribute('hh'));//dsdsd
+            div1.jj = 'dsdsdjj';//这种形式不会为div1设置属性，只有通过setAttribute方法才可以
+            console.log(div1.jj);
+            console.log(div1.getAttribute('jj'));//null
+            //删除属性
+            div1.removeAttribute('hh');
+            // console.log(div1.getAttribute('hh'));/null
+
+            //attributes 获取标签所有元素 返回值是一个NamedNodeMap结构
+         console.log(div1.attributes);//{0: id, 1: style, id: id, style: style, length: 2}
+         console.log(div1.attributes['id']);//id=div1
+         console.log(div1.attributes['id'].nodeValue);//div1
+        }, 1000);
+        
+    </script>
+</body>
+</html>

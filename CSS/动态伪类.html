@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type='text']:focus{
+            background-color: aqua;
+        }
+        a:link{
+            color: black;
+        }
+        a:hover{
+            background-color: red;
+        }
+        a:visited{
+            background-color: pink;
+        }
+        a:active{
+            background-color: yellow;
+        }
+        a:focus{
+            background-color: green;
+        }
+        a{
+            text-decoration: none;
+            
+        }
+        :checked{
+            background-color: aqua;
+            border: 2px solid red;
+        }
+        :required{
+            border: 2px solid red
+        }
+        :optional{
+            border: 2px solid black;
+            padding: 20px;
+        }
+        ul>li:nth-child(odd){
+            background-color: aqua;
+        }
+        ul>li:not(:nth-child(odd)){
+            background-color: pink;
+        }
+        #poem::first-letter{
+            color: blue;
+            font-size: large;
+        }
+        #poem1::first-line{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <p id="poem">举头望明月，低头思故乡</p>
+    <p id="poem1">举头望明月，低头思故乡<br>。梦中杀人</p>
+    <input type="text" name="username" id="user" required>
+    <input type="password" name="password" id="0">
+    <input type="checkbox" name="hobby" id="hobbybox" checked>c++
+    <input type="checkbox" name="hobby" id="hobbybox" >py
+    <select name="location" id="loca">
+        <option value="china" >china</option>
+        <option value="china" selected>uk</option>
+    </select>
+    <input type="radio" name="sex" value="woman" checked>女
+    <input type="radio" name="sex" value="woman">男
+    <a href="#">44</a>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+</html>

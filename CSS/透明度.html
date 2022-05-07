@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 480px;
+            height: 160px;
+            background:url('https://www.w3school.com.cn/i/photo/tulip_peach_blossom_s.jpg');
+        }
+        .text{
+            background-color: rgba(0,0,0,1);
+            margin-top: 50px;
+        }
+        .clearfix::before,
+        .clearfix::after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="text">
+            <span>我是文字</span>
+        </div>
+    </div>
+</body>
+</html>

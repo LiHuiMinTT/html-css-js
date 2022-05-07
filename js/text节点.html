@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id='div1'>我是div</div>
+    <script>
+        const ele = document.getElementById('div1');
+        console.log(ele.childNodes[0]);//#text
+        //text节点的nodevalue就是内容
+        console.log(ele.childNodes[0].nodeValue);//我是div
+        setTimeout(() => {
+            ele.childNodes[0].nodeValue = '<div><strong>转码</strong></div>';
+        }, 2000);
+
+        //创建文本节点
+        const eletext = document.createTextNode('hello word');
+        ele.appendChild(eletext);
+        //连续添加练歌文本节点
+        const eletext1 = document.createTextNode('hello word');
+        ele.appendChild(eletext1);
+        console.log('子节点数量' + ele.childNodes.length);//子节点数量3
+        ele.normalize();//将连续的多个文本子节点转换为一个
+        console.log('子节点数量' + ele.childNodes.length);//子节点数量1
+    </script>
+</body>
+</html>

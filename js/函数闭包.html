@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="testh">
+
+    </h2>
+    <button id="bt1">计数器</button>
+    <!-- 函数闭包是解决变量的作用域问题
+            需求1：用户只用通过调用制定函数才能增加计数器总数
+    -->
+    <script>
+        // 计数器 test1 存在不使用add函数就可以直接改掉a值的问题
+        let a = 1;
+        function add(){
+            a = a+1;
+        };
+        add();
+        add();
+        document.getElementById('testh').innerHTML = a;
+
+        
+        function bbadd(){
+            let a = 0;// 闭包解决作用域
+            return function(){
+                a += 1;
+                document.getElementById('testh').innerHTML = a;
+            }
+        }
+        let addfun = bbadd();
+        document.getElementById('bt1').onclick = addfun;
+    </script>
+</body>
+</html>

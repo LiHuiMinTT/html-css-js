@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 2000px;
+        }
+        #out{
+            position: relative;
+            height: 15px;
+            width: 30px;
+            font-size: 10px;
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: all 200ms linear;
+        }
+        #out>div{
+            width: 100%;
+            position: absolute;
+        }
+        #out:hover{
+            transform: rotateX(90deg)
+        }
+        #bottom{
+            transform:translateY(50%) rotateX(-90deg);
+            background-color: pink;
+            z-index: 1;
+        }
+        #top{
+            background-color: aqua;
+            transform: translateZ(7.5px);
+        }
+    </style>
+</head>
+<body>
+    <div id="out">
+        <div id="bottom">LT</div>
+        <div id="top">LHM</div>
+    </div>
+    <div id="out">
+        <div id="bottom">LT</div>
+        <div id="top">LHM</div>
+    </div>
+    <div id="out">
+        <div id="bottom">LT</div>
+        <div id="top">LHM</div>
+    </div>
+    <script>
+        if(a==b){
+
+        }else if(a>b){
+
+        }
+    </script>
+</body>
+</html>

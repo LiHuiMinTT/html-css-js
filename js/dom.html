@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            background-color: yellow;
+            height: 50px;
+            width: 50px;
+        }
+        #div2{
+           background-color: green;
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <span class='span1'></span>
+        <span id="span2"></span>
+    </div>
+    <div id='div2'></div>
+    <script>
+        //nodeName
+        const div1 = document.getElementById('div1');
+        console.log(div1.nodeName);//DIV
+        console.log(div1.nodeType);//1
+        console.log(div1.nodeValue);//null
+
+        //节点关系
+        //获取指定子节点
+        const childArr = div1.childNodes;
+        let childnode1 = div1.childNodes[1];
+        console.log(childnode1.nodeName);//SPAN
+        console.log(div1.childNodes.length);//5
+        console.log(childArr);//NodeList(5) [text, span.span1, text, span#span2, text]
+        //转换为数组
+        let childArr1 = Array.from(childArr);
+        console.log(childArr1);
+
+        //兄弟节点
+        console.log(childnode1.previousSibling);//#text
+
+        //判断一个节点是否含有子节点
+        console.log(div1.hasChildNodes());//true
+        const div2 = document.getElementById('div2');
+        console.log(document.getElementById('div2').hasChildNodes());//false
+
+        //判断两个节点是否有共同创建者
+        console.log(div1.ownerDocument == div2.ownerDocument);//true
+
+
+        //操纵节点
+        //将文档已存在标签插入，则会移动该标签
+        // div2.appendChild(div1,null);
+        
+        //insertBefore移动
+        // div2.insertBefore(div1,div2.firstChild);
+        //replaceChild
+        div1.replaceChild(div1.lastChild,div1.firstChild);
+        div1.normalize()
+        console.log(div1.childNodes);
+        
+    </script>
+</body>
+</html>

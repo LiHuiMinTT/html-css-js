@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2 id="testh"></h2>
+    </div>
+    <script>
+        const person = {
+            protypename:'lhm',
+            set name(name){
+                this.protypename = name;
+            }
+        }
+        document.getElementById('testh').innerHTML = person.protypename;
+        person.name = 'lt';
+        const arr = [1,2,4,6];
+        setTimeout(() => {
+            document.getElementById('testh').innerHTML = person.protypename;
+        }, 3000);
+
+        setTimeout(() => {
+            console.log('arr');
+            document.getElementById('testh').innerHTML = Arrsum(arr);//调用的函数可以在调用的后面进行创建。
+        }, 2000);
+        function Arrsum(arr){
+            let sum  = 0;
+            for (const value of arr) {
+                sum += value;
+                console.log('++');
+            }
+            return sum;
+        }
+    </script>
+</body>
+</html>

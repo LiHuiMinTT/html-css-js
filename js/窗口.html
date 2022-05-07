@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#d::before{
+            content: '111';
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="d">
+
+        <div class="div1" name="div1" id="div1">div1</div>
+        <div class = 'div2'>div2</div>
+
+    </div>
+    <div id="t">
+
+    </div>
+    <span>
+
+    </span>
+    <!-- <iframe  frameborder="2" name="ifr1"></iframe> -->
+    <a href="https://www.ketangpai.com/#/main" target="ifr1">百度</a>
+    <button id="bt1">打开窗口</button>
+    <button id="bt3">打开窗口location 可以后退</button>
+    <button id="bt4">打开窗口location 不可以后退</button>
+    <button id="bt2">关闭窗口</button>
+    <button id="bt5">刷新</button>
+    <button id="bt6">前进</button>
+    <button id="bt7">pushstate</button>
+    <button id="bt8">更改title</button>
+    <script>
+        let ifr;
+        document.getElementById('bt1').addEventListener('click',()=>{
+            ifr = window.open('https://www.ketangpai.com/#/main','ifr1');
+
+        });
+        document.getElementById('bt2').addEventListener('click',()=>{
+            ifr.close();
+            console.log(ifr.closed);
+        });
+        document.getElementById('bt3').addEventListener('click',()=>{
+            location.hash = '1231';
+            location.href = 'https://www.baidu.com';
+            setTimeout(() => {
+                console.log(location.href);
+            }, 1000);
+        });
+        document.getElementById('bt4').addEventListener('click',()=>{
+            location.replace('https://www.baidu.com');
+            setTimeout(() => {
+                console.log(location.href);
+            }, 1000);
+        });
+        document.getElementById('bt5').addEventListener('click',()=>{
+            setTimeout(() => {
+                location.reload();//可能从本地缓存重新加载
+                location.reload(true);//强制从服务器重新加载
+            }, 1000);
+        });
+        document.getElementById('bt6').addEventListener('click',()=>{
+            history.go(1);
+        });                
+        document.getElementById('bt7').addEventListener('click',()=>{
+            history.pushState({'name':'lihuimin'},'mytitle','baz.html');
+        });
+        window.addEventListener('popstate',(event)=>{
+            let state = event.state;
+            console.log(state);
+            console.log(history.state,'his');
+            setTimeout(() => {
+                history.replaceState({name:'lt'},'mytitle');
+                console.log(history.state);
+            }, 2000);
+        })
+    //     console.log(document.body.hasChildNodes());//true
+    //     console.log(document.getElementsByTagName('span')[0].hasChildNodes());//true
+    //     console.log(document.getElementById('d').childNodes);
+    //    let newele = document.getElementById('t');
+    //    console.log(newele.childNodes);
+    //    newele.normalize();
+    //     console.log(newele.childNodes);
+    //     document.getElementById('bt8').addEventListener('click',()=>{
+    //         document.title = 'lt'
+    //     });
+    //     console.log((document.getElementById('d')).getElementsByTagName('div'));//keyi
+    //     console.log((document.getElementById('d')).getElementsByClassName('div1'));//keyi
+        // console.log((document.getElementById('d')).getElementById('div1'));//不可以
+        // console.log((document.getElementById('d')).getElementsByName('div1'));//不可以
+        // let sc = document.createElement('script');
+        // sc.innerHTML = 'alert("动态脚本")';可以执行
+        // document.body.appendChild(sc);
+        // document.body.innerHTML = '\<script\>alert(\"innerhtml\")\<\/script\>';//不会执行
+
+
+
+
+        
+    </script>
+</body>
+</html>

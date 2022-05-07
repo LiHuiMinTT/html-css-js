@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table上的align控制表格在页面上的位置 -->
+    <!-- 
+        块级元素
+     -->
+    <table border ="1px solid" width="200px" height='200px'>
+        <!-- caption表格名，需要在table下进行指定，非必选 -->
+        <caption>表格名</caption>
+
+        <!-- thead定义表格头部结构 -->
+        <thead>
+            <tr>
+                <td>
+                    biaotou
+                </td>
+                <td>
+                    biaotou
+                </td>
+                <td>
+                    biaotou
+                </td>
+                <td>
+                    biaotou
+                </td>
+            </tr>
+        </thead>
+        <!-- tr上的algn控制单元格内部内容的位置 -->
+        <!-- tbody定义表格主体内容结构部分 -->
+        <tbody>
+        <tr align="center">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr align="center" style="background-color:red;color: silver;">
+            <td>1</td>
+            <td colspan="2" rowspan="2" style="background-color:red;color: silver;">2</td>
+            <td>3</td>
+        </tr>
+        <tr align="center">
+            <td>1</td>
+            <td colspan="2"> 2</td>
+
+
+        </tr>
+        <tr align="center">
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+    </tbody>
+    </table>
+    <!-- 块级元素 -->
+    <aside>
+        2.2
+    </aside>
+    0.0.
+</body>
+</html>

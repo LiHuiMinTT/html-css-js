@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过度</title>
+    <style>
+        button{
+            color:red;
+            background-color: aqua;
+            transition: background-color 50ms ease-in 50ms;
+        }
+        button:hover {
+            color:rebeccapurple;
+            background-color: aliceblue;
+            transition: background-color 2000ms ease-in 50ms;
+        }
+        ol{
+            display: inline-block;
+            width: 100px;
+            list-style: none;
+        }
+        li{
+            background-color: aqua;
+            text-align: center;
+        }
+        ol{
+            opacity: 0;
+            transition:opacity 2000ms;
+        }
+        #div1:hover{cursor: pointer;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border: 20px solid black;
+
+        }
+        div{
+            height: 100px;
+            width: 200px;
+            background-color: pink;
+            border: 2px red dotted;
+            transition:all 100ms linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1"></div>
+    <!-- <button>过度</button>
+    <button id="bt">shhow</button>
+    <br>
+    <ol id="ol">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ol>
+    <script>
+        document.getElementById('bt').addEventListener('mouseenter',()=>{
+            console.log('000');
+            document.getElementById('ol').style.opacity = 1;
+        });
+        document.getElementById('bt').addEventListener('mouseout',()=>{
+            console.log('000');
+            document.getElementById('ol').style.opacity =0;
+        }) -->
+    </script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p1 = {name:'li1'};
+        let p2 = {name:'li2'}
+        let newArr1 = new Array(p1,p2);
+        console.log(newArr1);// [{…}, {…}]
+        let newArr2 = new Array(1,2,3,4);
+        console.log(newArr2);// [1, 2, 3, 4]
+        let newArr3 = [,,,];
+        console.log(newArr3.length);//3
+        let newArr4 = [2,3,4,];
+        console.log(newArr4.length);//3
+        let newArr5 = [2,3,4,,];
+        console.log(newArr5.length);//4
+//数组静态方法
+       let fromArr =  Array.from('matt');
+       console.log(fromArr);// ['m', 'a', 't', 't'] 
+        let zqArr = Array.from(fromArr,x=>x+2);
+        console.log(zqArr);// ['m2', 'a2', 't2', 't2']
+        //of
+        let ofArr = Array.of(1,2,3,4,5);
+        console.log(ofArr,'ofArr');//[1, 2, 3, 4, 5] 'ofArr'
+        let ofArr1 = Array.of(undefined,undefined,undefined);
+        console.log(ofArr1,'ofArr1');//[undefined, undefined, undefined] 'ofArr1'
+
+        let arr01 = [,,undefined,5];
+        let mapArr = arr01.map(()=>{
+            return 6
+        })
+        console.log(mapArr,'mapArr');//[空 ×2, 6, 6] 'mapArr'
+        let fromArr1 = Array.from(fromArr);
+        console.log(fromArr1 == fromArr);//false 'fromArr1 == fromArr,'
+        console.log(fromArr1 === fromArr);//false 'fromArr1 == fromArr,'
+
+        let arr = ['1','2','3','4'];
+        console.log(arr.values(),'values');//Array Iterator {} 'values'
+        console.log(arr.keys(),'keys');//Array Iterator {} 'keys'
+        console.log(arr.entries(),'entries');//Array Iterator {} 'entries'
+        const arrfrom = Array.from(arr.entries());
+        console.log(arrfrom,'arrfrom');//[Array(2), Array(2), Array(2), Array(2)]0: (2) [0, '1']1: (2) [1, '2']2: (2) [2, '3']3: (2) [3, '4']length: 4[[Prototype]]: Array(0) 'arrfrom'
+        for (const [index,value] of arr.entries()) {
+            console.log('value:' + value);
+            console.log('index:' + index );
+        }
+
+        //let arr = ['1','2','3','4'];
+        arr.copyWithin(1,0,2);//从索引为0-2的区间复制插入到索引1之后的位置
+        console.log(arr,'copyWithin');// ['1', '1', '2', '4']
+        
+
+        console.log(arr instanceof Object);//true
+        //arr = ['1', '1', '2', '4']
+        console.log(arr.valueOf(),'valueof');//['1', '1', '2', '4']
+        console.log(arr.toString(),'tostring');//1,1,2,4
+        console.log(arr.toLocaleString(),'tolocalestring');//1,1,2,4
+
+        //arr=['1', '1', '2', '4']
+        console.log(arr.pop(),'pop');
+        console.log(arr);
+        arr.push('ii','oo');
+        console.log(arr,'push');
+        let person1 = {
+            id:02,
+            toString(){
+                return 'person1';
+            },
+            toLocaleString(){
+                return "1person"
+            }
+        };
+        let person2 = {
+            id:01,
+            toString(){
+                return 'peerson2';
+            },
+            toLocaleString(){
+                return "2person"
+            }
+        };
+        let person3 = {
+            id:03,
+            toString(){
+                return 'peerson3';
+            },
+            toLocaleString(){
+                return "3person"
+            }
+        };
+        console.log([person1,person2,person3]);
+        //数组排序
+        let arr1 = ['1','3','2','4'];
+        console.log(arr1);;
+        arr1.sort();//在原数组上进行修改
+        console.log(arr1);//['1', '2', '3', '4']
+        //自定义排序规则
+        let p = [person1,person2,person3]
+        p.sort((value1,value2)=>{
+            if(value1.id>=value2.id){
+                return 1;
+            }
+            return -1;
+        })
+        console.log(p);
+        //concat连接
+        let arrf = ['li','ue','yy'];
+        let affs = ['ji','lo','pp'];
+        console.log(arrf.concat(affs));
+        console.log(arrf.concat('yellow',['ji','lo','pp']));
+        console.log(arrf.concat('yellow',affs));
+
+        //concat不强制转换数组
+        let arrt = {
+            [Symbol.isConcatSpreadable]:true,//设置是否转换为数组，默认为true，即转换当前类型为数组
+            length:2,
+            0:'pink',
+            1:'brown'
+        }
+        console.log(arrf.concat(arrt),'concat打平');//['li', 'ue', 'yy', 'pink', 'brown']
+        arrt[Symbol.isConcatSpreadable] = false;//更改为false，不转换直接以对象形式连接
+        console.log(arrf.concat(arrt),'concat不打平');// ['li', 'ue', 'yy', {…}]
+
+        //条件查找
+        //当找到符合条件的项后，不会继续下去
+        let allPerson = [person1,person2,person3];
+        console.log(allPerson.find((element,index,arr)=>{
+            return element.id<2;//只得到一个id=1的。找到一个直接跳出查找
+            //{id: 1, toString: ƒ, toLocaleString: ƒ}
+        }));
+        //map()遍历每一个元素，并对每一个元素进行函数运算，返回值是一个新数组
+        let numArr=[1,2,4,5];
+        let newArr = numArr.map((item,index,arr)=>{
+            return item*2;
+        })
+        numArr.forEach(element => {
+            console.log(element*2,'foreach');//2  4  8 10
+        });
+
+        console.log(newArr);//[2, 4, 8, 10]
+        let pre = 0;
+        let sum = newArr.reduce((pre,cur,index,array)=>{
+            return pre+cur;//返回值当做pre继续迭代，直到迭代结束返回
+        })
+        console.log(sum);//24
+        for (const iterator of newArr.entries()) {
+            console.log(iterator);
+
+        }
+        let arrt0 = [1,2,3,5,6];
+        let newarrt = arrt0.map((x)=>{
+            return x+10;
+        })
+        console.log(newarrt);
+        console.log(newarrt.join('--'));//11--12--13--15--16
+    </script>
+</body>
+</html>

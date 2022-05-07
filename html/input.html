@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <form action="#">
+        <input type="text">
+        <input type="password">
+        <input type="radio" name="sex">男
+        <input type="radio" name="sex">女
+        <select name="hobby" multiple>
+            <option value="c++" selected>c++</option>
+            <option value="python" selected>python</option>
+        </select>c
+        c++<input type="checkbox" name="hobby" id="checkbox" value="c++" >
+        python<input type="checkbox" name="hobby" id="checkbox1" value="python">
+        java<input type="checkbox" name="hobby" id="checkbox2" value="java">
+        <input type="file" name="text" id="file" multiple>
+    </form>
+    <script>
+        // console.log(document.getElementsByTagName('form')[0].childNodes)
+        // console.log(document.getElementsByTagName('form')[0].elements);
+        // console.log(document.getElementById('div1').elements);
+        document.getElementById('file').addEventListener('change',(event)=>{
+            const files = event.target.files;
+            for (const iterator of files) {
+                console.log(iterator.name,iterator.type);
+            }
+        }) 
+
+    </script>
+</body>
+</html>

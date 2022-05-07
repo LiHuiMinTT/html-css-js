@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="height: 150px;width: 100%; background-color: blue;"></div>
+    <a href="https://www.w3school.com.cn/js/js_window.asp" target="ifr">w3c</a>
+    <iframe name="ifr" frameborder="0"></iframe>
+    <script>
+        //window.open
+        // let w1 = window;
+        // setTimeout(() => {
+        //     window.open('https://www.baidu.com');
+        //     console.log('baidu');
+        // }, 5000);
+        // setTimeout(() => {
+        //     window.open('https://www.alibaba.com');
+        //     console.log('ailibaba');
+        // }, 6000);
+
+        //window.moveTo  浏览器禁用
+        // setTimeout(() => {
+        //     window.moveTo(100,100);
+        //     console.log('zhi');
+        //     window.moveBy(100,100);
+        // }, 3000);
+        
+        //获取窗口大小
+        // console.log(window.innerHeight,window.innerWidth);//获取视口大小，不包括浏览器导航栏，边框，工具栏
+        // console.log(document.body.clientHeight,document.body.clientWidth)//获取渲染页面实际大小
+        //resizeTo,resizeBy
+        // setTimeout(() => {
+        //     console.log('to');
+        //     window.resizeTo(-100,-100);//jinyong
+        // }, 3000);
+        
+        //window.open在指定窗口打开页面，如果没有该窗口则新创建一个
+        // window.open('https://www.runoob.com/html/html-quicklist.html','ifr')//ifr为页面内一个iframe窗口的名字
+        // window.open('https://www.runoob.com/html/html-quicklist.html','ifrnew')
+        //第三个参数，设置浏览器设置
+        // let newwin = window.open('https://www.runoob.com/html/html-quicklist.html','ifrnew','height=400,width=400,left=100,top=500,resizable=no,toolbar=yes,Menubar=yes');
+        // setTimeout(() => {
+        //     newwin.close();//将新打开的窗口关闭
+        // }, 2000);
+
+        //opener检测窗口打开者
+        // newwin.opener
+        // console.log(newwin.opener);
+        // setTimeout(() => {
+        //     console.log(newwin.opener);
+        // }, 2000);
+        // setTimeout(() => {
+        //     window.close();//关闭本页面
+        // }, 1000);
+        //confirm
+        // setTimeout(() => {
+        //     let returnValue = confirm('你爱李辉民嘛?');//页面会提示并接受返回值
+        //     if(returnValue){
+        //         setInterval(() => {
+        //             confirm('你退不出了！')
+        //         }, 2000);
+        //     }
+        //     alert('hrns')
+        // }, 1000);
+
+        //prompt()输入框提示
+        // let p = prompt('请输入你的男朋友名字','谢霆锋');
+        // let p1 = prompt('请输入你的年龄');
+        // p = p || '陌生人';
+        // alert('欢迎你' + p);
+        // alert('欢迎你' + p);
+
+        //location 获取当前窗口加载文档信息，以及通常的导航
+        console.log(document.location.host);//获取服务器名及端口号
+        console.log(window.location.hostname);//获取服务器名
+        console.log(document.location.port);//端口号
+        console.log(typeof document.location.search);//string
+        //省略 p372页
+        //会导致重新加载页面的几个修改方式search，hostname，pathname，port；hash不会导致重新加载url
+        setTimeout(() => {
+            // location.href = 'https://www.baidu.com';//会添加浏览记录
+            location.replace('https://www.baidu.com');//不会添加浏览记录
+        }, 5000);
+        setTimeout(() => {
+          alert('我在哪里打印');
+            location.hash='#jiji';
+        }, 3000);
+    </script>
+</body>
+</html>

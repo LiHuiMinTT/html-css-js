@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            position: absolute;
+            top: 0;
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+            opacity: 0.03;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-image: url('https://www.w3school.com.cn//i/photo/tree.png');background-size: 100% 100%;height: 800px;width: 800px;"></div>
+    <input type="text">
+    <button onclick="addzz()">遮罩</button>
+    <div id="zz"></div>
+    <script>
+        function addzz(){
+            document.getElementById('zz').classList.add('div');
+        }
+    </script>
+</body>
+</html>

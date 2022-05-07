@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color: aqua;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<script>
+    console.log(document.styleSheets[0]);//获取文档中定义的所有样式表
+    const styleSheet = document.getElementsByTagName('style');
+    console.log(styleSheet[0].sheet);//在style或link元素实例上面也有sheet属性可以获取对应的完整规则
+    const cssRules = styleSheet[0].sheet.cssRules;//获取每一个样式表的css规则
+    console.log(cssRules);
+    const rule = cssRules[0];
+    console.log(rule.style.cssText);
+
+</script>    
+</body>
+</html>

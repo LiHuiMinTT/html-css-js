@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="testh"></h2>
+    <!-- 函数的回调作用： -->
+    <script>
+        let sum = 0;
+        function firstFun(a,b,secondFun){
+           sum = a+b;
+           return secondFun(sum); 
+        };
+        function secondFun(num){
+            return num**2;
+        }
+        document.getElementById('testh').innerHTML = firstFun(1,2,secondFun);
+    </script>
+</body>
+</html>

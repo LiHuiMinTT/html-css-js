@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        #div1:hover{
+            /* 透视越小，子元素越大 */
+            perspective: 0px;
+            height: 500px;
+            width: 500px;
+            background-color: white;
+            border: 2px solid red;
+            transition: all 1000ms linear;
+        }
+        #div2:hover{
+            border: 200px solid green;
+            transition: all 1000ms linear 200ms;
+        }
+        #img{
+            perspective: 500px;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+            border: black solid 1px;
+        }
+        img{
+            width: 100px;
+            transform:rotate3d(1,1,0,50deg)
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" style="width: 300px;width: 300px;background-color: yellow;"> 
+        <div style="height: 200px; width: 200px;background-color: pink;transform: translate3d(0,100px,100px);"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div id="div2" style="width: 200px;height: 200px;background-color: yellow;"></div>
+    <div id="img">
+        <img src="../m.jpg" alt="..">
+    </div>
+    <div style="background-color: red;width: 200px;height: 200px;"></div>
+</body>
+</html>

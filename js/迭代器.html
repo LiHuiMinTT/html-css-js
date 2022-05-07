@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const str25  = 'lihuimin';
+        const str = new String(str25);
+        console.log(str);
+        console.log(str[Symbol.iterator]);
+        for (const iterator of str25) {
+            console.log(iterator);
+        }
+        const set1 = new Set('1232345666');
+        console.log(set1);
+    //     let arr = [1,2,3,4];
+    //     console.log(arr[Symbol.iterator]);//ƒ values() { [native code] }：迭代器工厂函数
+    //     console.log(arr[Symbol.iterator]());//Array Iterator {}
+    //     for (const iterator of arr[Symbol.iterator]()) {
+    //         console.log(iterator);
+    //         if(iterator>2){
+    //             break;
+    //         }
+    //     }
+    //     for (const iterator of arr[Symbol.iterator]()) {
+    //         console.log(iterator);
+    //     }
+    //     const iter = arr[Symbol.iterator]();
+    //     console.log('迭代器对象',iter);
+    //     for (const iterator of iter) {
+    //         console.log(iterator);
+    //         if(iterator>1){
+    //             console.log('迭代中断');
+    //             break;
+    //         }
+    //     }
+    //     for (const iterator of iter) {
+    //         console.log('迭代器没有关闭，还会从上次中断处继续');
+    //         console.log(iterator);
+    //     }
+    //     let ddArr = [1,2,3,4,6];
+    //     for (const iterator of ddArr) {
+    //         console.log(iterator);
+    //     }
+    //     let ddQ = ddArr.values();
+    //     console.log(ddQ.next());
+    //     console.log(ddQ.next());
+    //     console.log(ddQ.next());
+
+    //     let personArr = {
+    //         * [Symbol.iterator](){
+    //             for(let i =0;i<3;i++){
+    //                 yield i;
+    //             }
+    //         },
+    //         return(){
+    //             console.log('提前结束');
+    //         }
+    //     }
+
+    //    for (const iterator of personArr) {
+    //        if(iterator == 2){
+    //            break;
+    //        }
+    //        console.log(iterator);
+    //    }
+
+    // //    let newPersonArr = {
+    // //        [Symbol.iterator](){
+    // //            return {
+    // //                next(){
+    // //                     return{done:'true'}
+    // //                },
+    // //                return(){
+    // //                    console.log('提前结束');
+    // //                }
+    // //            }
+    // //        }
+    // //    }
+    // //    for (const iterator of newPersonArr) {
+    // //        console.log(iterator);
+    // //    }
+    // class newPersonArr {
+    //     constructor(i){
+    //         this.limit = i;
+    //     }
+    //        [Symbol.iterator](){
+    //            let obj = {};
+               
+    //             if(i<this.limit){
+    //             obj = {value:i,done:false}
+    //              }else{
+    //                  obj = {value:i,done:true}
+    //               }
+               
+    //            return{
+    //                next(){
+    //                    return obj;
+    //                },
+    //                return(){
+    //                    console.log('提前退出');
+    //                }
+    //            }
+    //            }
+    //        }
+    //        let p1 = new newPersonArr(6);
+
+    //    for (const iterator of p1) {
+    //        console.log(iterator);
+    //    }
+    </script>
+</body>
+</html>

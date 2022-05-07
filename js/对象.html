@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 'use strict'//开启严格模式
+        // let obj = {};
+        // //调用defineProperty后，没指定的特性都默认变为false
+        // Object.defineProperty(obj,'name',{
+        //     configurable:false,
+        //     value:'lhm'
+        // })
+        // //想要更改name属性的value，但是调用defineProperty时未指定writable属性，所以下面更改会报错
+        // // Object.defineProperty(obj,'name',{
+        // //     configurable:false,
+        // //     value:'lt'
+        // // })
+
+        // //直接赋值给不可写的属性，会忽略,严格模式下会报错
+        // obj.name = 'lt'
+        // console.log(obj.name);//lt
+        // let p  ={
+        //     name:'li',
+        //     age:23,
+           
+        // }
+        // console.log(Object.keys(p));// ['name', 'age']
+        // console.log(Object.values(p));// ['li', 23]
+        // console.log(Object.entries(p));//[Array(2), Array(2)]
+        // // console.log(p.keys());//p.keys is not a function
+        // const mp = new Map([['name','lihuimin']]);
+        // console.log(Object.values(mp));//[]
+
+        class Person{
+            constructor(name){
+                this.name = name;
+            }
+            showName(){
+                console.log(this.name);
+            }
+        }
+        Person.age = 18;
+        const p = new Person('lit')
+        console.log(Object.getPrototypeOf(p).constructor.age);
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const map1 = new Map([['key1','value1'],['key2','value2'],['key3','value3']]);
+        // console.log(map1.next()); next只能在得到的迭代器对象上调用
+        console.log(map1);//Map(3)
+        console.log(map1 instanceof Map);//true
+        console.log(...map1);//Array(2) Array(2) Array(2)
+        console.log([...map1]);//Array(3)
+
+        const map2 = new Map({
+            * [Symbol.iterator](){
+                yield [1,'01'];
+                yield [{name:'map'},{}];
+                yield [3,'03'];
+            }
+        });
+        for (const iterator of map2.entries()) {
+            console.log(iterator);//[1, '01'] [{…}, {…}] [3, '03']
+        }
+        for (const iterator of map2) {
+            console.log(iterator);//[1, '01'] [{…}, {…}] [3, '03']
+        }
+        console.log(map2.entries().next());//{value: Array(2), done: false}
+        console.log(map2.entries().next());//
+        console.log(map2.entries().next());
+        console.log(map2.entries().next());
+        //
+        let iter = map2.entries();
+        let iter1 = map2.entries();
+        console.log(iter);//
+        console.log(map2[Symbol.iterator]() ===iter);//不等，因为相当于创造了两个迭代器来迭代该结构
+        //两个迭代器互不影响
+        let iter2 = map2.entries();
+        console.log(iter2.next());
+        console.log(iter2.next());
+        console.log(iter2.next());
+        console.log(iter2.next());
+        /*{value: Array(2), done: false}
+        map.html:42 {value: Array(2), done: false}
+        map.html:43 {value: Array(2), done: false}
+        map.html:44 {value: undefined, done: true}*/
+        console.log(iter1[Symbol.iterator]() === iter1)//true 迭代器对象的symbol.iterator返回的迭代器就是自己
+
+ 
+    </script>
+</body>
+</html>

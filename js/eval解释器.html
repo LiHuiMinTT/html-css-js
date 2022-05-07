@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        eval("function myfun1(){console.log('fun');}");
+        myfun1();//fun
+        // eval("let myfun2 = function(){console.log('fun');}");
+        // myfun2();//myfun2 is not defined
+        eval("myfun2 = function(){console.log('fun');}");
+        myfun2();
+        // eval("let msg = 'hello';")
+        // console.log(msg);//msg is not defined
+        eval("msg = 'hello';")
+        console.log(msg);//hello
+
+        function show(){
+            console.log(b);//2
+        }
+        let b = 2;
+        show();//2
+    </script>
+</body>
+</html>

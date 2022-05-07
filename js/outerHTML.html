@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="div1">
+            <span>span1</span>
+            <span>
+                span2
+            </span><span>
+                span3 
+            </span>
+        </div>
+    </div>
+    <script>
+        const div1 = document.getElementById('div1');
+        (async function fun(){
+            await delayFun(3000);
+            div1.outerHTML = '<div>我是替代品div</div>';//谁调用，谁被替换
+        })();
+
+        async function delayFun(delay){
+           return new Promise((resolve,reject)=>{
+               setTimeout(() => {
+                   resolve();
+               }, delay);
+           })
+        };
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2 id="testh"></h2>
+    </div>
+    <script>
+        const person = {
+            protypename:'lhm',
+            set name(name){
+                this.protypename = name;
+            },
+            tatalname(){
+                return this.firstName + ' ' + this.secondName;
+            }
+        };
+        const p1 = {
+            firstName:'li',
+            secondName:'tian'
+        };
+        const p2 = {
+            firstName:'li',
+            secondName:'huimin'
+        }
+        document.getElementById('testh').innerHTML = person.tatalname.call(p1);
+        
+        setTimeout(() => {
+            setTimeout(() => {
+                alert('wait for 3s');
+            }, 1000);
+            document.getElementById('testh').innerHTML = person.tatalname.call(p2);
+        }, 1000);
+       
+    </script>
+</body>
+</html>

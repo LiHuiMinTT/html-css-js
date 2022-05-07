@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const request = indexedDB.open('admin',61);
+        let db;
+        const user = {
+            username:'090',
+            firstname:'James',
+            lastname:'Bond',
+            password:'f00'
+        };
+        request.onerror = (event)=>{
+            alert(`failed to open:${event.target.errorCode}`);
+        };
+        request.onsuccess = (event)=>{
+            db = event.target.result;//event.target指向request
+            console.log(event.target.result.name);
+            const trans = db.transaction('users','readwrite');
+            const store = trans.objectStore('users');
+            store.add(user);
+            const datareq = store.get('080');
+            datareq.onerror = (event)=>{
+                console.log(event);
+            };
+            datareq.onsuccess = (event)=>{
+                console.log(event.target.result.firstname);
+            };
+        }
+        request.onupgradeneeded = (event)=>{
+            const db = event.target.result;
+            console.log('new create');//无效
+            if(db.objectStoreNames.contains('users')){
+                db.deleteObjectStore('users');
+            }
+            db.createObjectStore('users',{keyPath:'username'});
+        }
+        
+
+    </script>
+</body>
+</html>

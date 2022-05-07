@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插入音频audio</title>
+</head>
+<body>
+    <!-- 浏览器很多不支持自动播放，设置autoplay也没用了
+        loop依旧可以使用，设置循环播放 -->
+    <audio src="/music/孤勇者.mp3" controls loop id = "au1">您的浏览器不支持audio</audio>
+    <audio src="/music/孤勇者.mp3" preload="metadata" controls>您的浏览器不支持audio</audio>
+    <button id = 'bt1'>anniu</button>
+    <button>bt2</button>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js">
+    </script>
+    <script>
+        $(function(){
+ 
+            let a = 0
+            $("#bt1").click(function(){
+                if(a===0){
+                    $("#au1")[0].play()
+                    a = 1
+                }else{
+                    $("#au1")[0].pause()
+                    a = 0
+                }
+                
+            })
+        })
+
+    </script>
+</body>
+</html>

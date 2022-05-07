@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const prm = new Promise((resolve,reject)=>{
+        //     setTimeout(() => {
+        //         resolve(3);
+        //     }, 2000);
+        // })
+        // const prm1 = prm.then(function(){
+        //     console.log(arguments);
+            
+        // },null)
+        // setTimeout(() => {
+        //     console.log(prm1);
+        // }, 3000);
+        // const rejectpro = prm1.then((data)=>{
+        //     console.log(data,'prm1');
+        //     throw new Error('shoudongyichang');
+        // },()=>{
+
+        // })
+        // new Promise((resolve,reject)=>{
+        //     resolve(2);
+        // }).then((data)=>{
+        //     throw new Error('手动异常');
+        // }).then(null,(err)=>{
+        //     console.log(err);
+        // })
+        
+        function sleep(delay){
+           return new Promise((resolve,reject)=>{
+               setTimeout(() => {
+                   resolve();
+               }, delay);
+           })
+        };
+        async function fun(){
+            await sleep(2000);
+            console.log('继续');
+            throw 'defeat';
+        };
+
+        const pro = fun();
+        console.log(pro,'pro');
+        console.log('main');
+    </script>
+</body>
+</html>

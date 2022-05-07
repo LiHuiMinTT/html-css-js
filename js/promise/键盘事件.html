@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="user_name" id="name">
+    <select name="country" id="country">
+        <option value="china">中国</option>
+        <option value="usa">美国</option>
+    </select>
+    <button id="bt1">添加城市</button>
+    <script>
+        window.onload=()=>{
+            window.addEventListener('beforeunload',(event)=>{
+                console.log(event.cancelable);
+            let message = '确认离开？'
+            event.returnValue = message;
+        })
+        let name = document.getElementById('name');
+        name.addEventListener('keyup',handler);
+        name.addEventListener('keypress',all);
+        function all(event){
+            console.log('--------');
+            handler(event);
+        };
+        function handler(event){
+            console.log('keycode:' + event.keyCode);
+            console.log('key' + event.key);
+            console.log('charcode' + event.charCode);
+            // console.log('char' + event.char);
+        }
+        name.addEventListener('select',(event)=>{
+            console.log(name.selectionStart);
+        })
+        };
+        let sele = document.getElementById('country');
+       document.getElementById('bt1').addEventListener('click',()=>{
+            let opt  =  new Option('印度','india');
+            sele.add(opt)
+       })
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(){
+            this.Name = 'name';
+            this.myfun = function(){
+                console.log('myfun');
+            }
+        }
+        let p = new Person();
+        p.__proto__.show = function(){
+            console.log('protofun');
+        }
+        Person.prototype.play = function(){
+            console.log('play');
+        }
+        console.log(Object.keys(p.__proto__));
+        console.log(Object.entries(p));
+        console.log(Object.values(p));
+
+        let obj1 = {}
+        console.log(obj1);
+
+        //
+        function Animal(){
+
+        }
+        let an1 = new Animal();
+        Animal.prototype.show = function(){
+            console.log('show');
+        }
+        an1.show()
+        let obj2 = {
+            toString(){
+                return '213'
+            }
+        }
+        console.log(obj2 ==213);
+        class clas1 {
+            constructor(){
+
+            }
+            show(){
+
+            }
+            shot(){
+
+            }
+        }
+        let cl = new clas1();
+        clas1.prototype.play = function(){
+            console.log('play');
+        }
+        cl.play()
+
+    //     let getsun = function(a,b,c){
+    //         let sum = 0;
+    //         let arr = [...arguments]
+    //         let total = arr.reduce((sum,cur)=>{
+    //             return sum+cur;
+    //         })
+    //         return total;
+    //     };
+    //    console.log(getsun(1,2)) 
+    let getsun = function(a,b,c){
+            let sum = a+b+c;
+            return sum;
+        };
+       console.log(getsun(1,2)) //nan
+       console.log(1+2+undefined);//nan
+
+       function getsum(...values){
+           console.log(arguments instanceof Array);//false
+           console.log(values);
+           console.log(values instanceof Array) ;//true
+       }
+       getsum(1,2,3);
+    </script>
+</body>
+</html>

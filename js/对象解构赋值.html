@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //嵌套结构复制只能创建一级未设定属性。
+        // let person = {
+        //     name:'matt',
+        //     age:27,
+        //     job:{
+        //         title:'software engineer'
+        //     }
+        // };
+        // let newp = {};
+        // ({job:{title:newp.info.title}} = person)//Cannot set properties of undefined (setting 'title')
+        // console.log(newp);
+
+        class Person{
+            
+            constructor(){
+                console.log('一个实例创建了');
+                this.name = 'lt'
+            }
+            //方法存在于实例的原型上
+            setAge(age){
+                this.age = age;
+            }
+        }
+
+        const p1 = new Person();
+        const p2 = new p1.constructor();//很少使用
+        console.log(p2);
+        console.log(Person === Person.prototype.constructor);//true 类的原型上的构造函数指向类自身
+        console.log(p2.constructor === Person);//true
+
+        console.log(p2.constructor);//class Person{}
+        //new Person.constructor(); 只是当做普通函数创建
+        const p3 = new Person.constructor();
+        console.log(p3.constructor);//ƒ Function() { [native code] }
+
+        class Leader extends Person{
+
+        }
+        console.log(Leader.prototype);//继承一个类，其实就是将该类作为当前类的原型对象
+        function myfun0(){
+            function myfun1(){
+                console.log('myfun1');
+            }
+            return myfun1
+        }
+        let myfun1 = myfun0();
+        myfun1();
+        let obj2 = {
+            name:'lihuimin'
+        }
+        console.log(obj2);
+    </script>
+</body>
+</html>

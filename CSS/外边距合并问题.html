@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        解决方式：
+          1给父元素加border
+          2设置父元素内边距
+          3给父元素设置overflow为hidden
+        */
+        #out{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            /* overflow: hidden; */
+            display: flex;
+        }
+        #in{
+            margin-top: 20px;
+            padding-top: 30px;
+            height: 50px;
+            width: 50px;
+            background-color: aquamarine;
+            /* word-wrap: break-word;设置超出元素范围自动换行，中文不需要  */
+            word-wrap: break-word;
+            /* overflow: hidden; */
+        }
+        li~li{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="out">
+        <div id="in">
+            <!-- <p>13465467945646</p>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+            <p>0.0.0.0.</p>
+            <ol>
+                <li>o</li>
+                <li>0</li>
+                <li>0</li>
+                <li>0</li>
+            </ol> -->
+        </div>
+    </div>
+    <p>13465467945646</p>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <p>0.0.0.0.</p>
+    <ol>
+        <li>o</li>
+        <li>0</li>
+        <li>0</li>
+        <li>0</li>
+    </ol>
+</body>
+</html>

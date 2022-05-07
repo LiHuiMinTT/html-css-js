@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>picture</title>
+</head>
+<body>
+    <!-- picture标签可以设置多个source属性，在不同的media条件下，根据页面大小来设置不同背景 -->
+    <picture>
+        <source media="(min-width:650px)" srcset="https://www.w3school.com.cn//i/photo/flower-4.jpg">
+        <source media="(min-width:465px)" srcset="https://www.w3school.com.cn//i/photo/tulip.jpg">
+        <img src="https://www.w3school.com.cn//i/photo/flower.gif" alt="Flowers" style="width:auto;">
+      </picture>
+</body>
+</html>

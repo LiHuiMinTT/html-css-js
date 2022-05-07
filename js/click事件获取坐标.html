@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body style="background-color: aqua;">
+    <div id="div">222</div>
+    <ul id="menu" style="visibility: hidden;position: absolute;background-color: aliceblue;display: inline-block;list-style: none;cursor:crosshair;">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+    <input type="text" name="name" id="name1">
+    <script>
+        // document.addEventListener('mousedown',(event)=>{
+     
+        //     console.log(event.clientX+','+event.clientY);
+        // });
+        // document.addEventListener('keypress',(event)=>{
+        //     console.log(event.key);
+        //     console.log(event.charCode,'char');
+        //     console.log(event.keyCode);
+        // });
+        // document.addEventListener('keydown',(event)=>{
+        //     console.log(event.key);
+        //     console.log(event.charCode);
+        // });
+        document.getElementById('name1').addEventListener('keyup',(event)=>{
+            console.log(event.key ,'key');
+            console.log(event.keyCode,'keycode');
+            console.log(event.charCode,'charcode');
+        });
+        document.getElementById('name1').addEventListener('keypress',(event)=>{
+            console.log('keypress');
+            console.log(event.key ,'key');
+            console.log(event.keyCode,'keycode');
+            console.log(event.charCode,'charcode');
+        });
+        // document.getElementById('name1').addEventListener('textInput',(event)=>{
+        //     console.log(event.data,'method',event.inputMethod);
+        //     console.log(event)
+        // });
+        // window.addEventListener('load',()=>{
+        //     document.addEventListener('contextmenu',(event)=>{
+        //     event.preventDefault();
+        // });
+        // const menu = document.getElementById('menu').style;
+        // document.addEventListener('mouseup',(event)=>{
+        //     if(event.button==2){
+        //         if(menu.visibility=='visible'){
+        //             menu.visibility= 'hidden';
+        //             menu.left = event.clientX-8 +"px";
+        //             menu.top = event.clientY-45 + "px";
+        //             menu.visibility= 'visible';
+        //         }else{
+        //             menu.left = event.clientX-8 +"px";
+        //             menu.top = event.clientY-45 + "px";
+        //             menu.visibility='visible';
+        //         }
+        //     }else{
+        //         menu.visibility='hidden';
+        //     }
+        // });
+        // })
+        
+    </script> 
+</body>
+
+</html>

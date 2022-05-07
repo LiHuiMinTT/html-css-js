@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://127.0.0.1/" method="post">
+        用户名:<input type="text" name="username" id="name1">
+        密码:<input type="password" name="password" id="password">
+        <input type="file" name="file" id="file1">
+        <input type="submit" value="提交">
+    </form>
+    <button id="outersub">tijiao</button>
+    <script>
+        document.forms[0].addEventListener('submit',(event)=>{
+        event.preventDefault();
+    //     console.log(document.forms[0]);
+    //    console.log(document.forms[0].elements);
+    //    console.log(document.forms[0].elements[id='name1']);
+    //    for (const iterator of document.forms[0].elements) {
+    //        console.log(iterator.value);
+    //    };
+        const form = {
+            username:document.forms[0].elements['username'].value,
+            password:document.forms[0].elements['password'].value,
+            file:document.forms[0].elements['file'].value
+        }
+        console.log(document.forms[0].elements['file']);
+        const jsonstr = JSON.stringify(form);
+        const jsonheader = new Headers({
+            'Content-Type':'application/json'
+        });
+        const formdataheader = {
+            'Content-Type':'application/x-www-form-urlencoded'
+        };
+        const formdata1 = new FormData();
+        formdata1.append('name','123');
+        formdata1.append('password','456');
+       fetch('http://127.0.0.1/user',{
+           method:'post',
+           body:formdata1,
+           headers:formdataheader
+       }).then((response)=>{
+        response.text().then((data)=>{
+            console.log(data);
+            document.cookie = `username=${data}`;
+            localStorage.setItem('username',data);
+        })
+        
+       },(err)=>{
+           console.log(err);
+       })
+        // const xhr = new XMLHttpRequest();
+        // xhr.onload = function(){
+        //     if(xhr.readyState ==4){
+        //         if(200<=xhr.status<=300||xhr.status==304){
+        //             alert(xhr.responseText);
+        //         }
+        //     }
+        // }
+        // xhr.open('post','http://127.0.0.1/',true);
+        // xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        // xhr.setRequestHeader('Origin','http://www.baidu.com');
+        // xhr.send(new FormData(document.forms[0])); 
+            });
+    //    document.getElementById('outersub').addEventListener('click',(event)=>{
+    //        event.preventDefault();
+    //        document.forms[0].submit();
+    //    })
+    </script>
+</body>
+</html>

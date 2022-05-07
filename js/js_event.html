@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1">我没事件</h1>
+    <button id="bt">
+        给标题添加一个事件
+    </button>
+    <script>
+        dom1 = document.getElementById('bt');
+        dom1.onclick = function(){
+            document.getElementById('h1').innerHTML = '我有事件了';
+            dom1.innerHTML = '删除事件';
+            document.getElementById('h1').addEventListener('mousemove',function() {
+            })
+            dom1.onclick = function(){
+                document.getElementById('h1').innerHTML = '我又没事件了';
+                document.getElementById('h1').removeEventListener("mousemove");
+            }
+        }
+    </script>
+</body>
+</html>

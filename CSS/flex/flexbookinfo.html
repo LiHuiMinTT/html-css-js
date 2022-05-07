@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            background-color: pink;
+            height: 60px;
+        }
+        .ctnav{
+            display: flex;
+            justify-content:center;
+            flex-wrap: nowrap;
+        }
+        .ctnav>.logo{
+            box-sizing: border-box;
+            width: 20vw;
+            border: solid red 2px;
+            align-items: flex;
+            
+        }
+        .navct{
+            box-sizing: border-box;
+            width: 60vw;
+            border: lightcyan 2px solid;
+        }
+        .navr{
+            box-sizing: border-box;
+            width: 20vw;
+            border: black solid 2px;
+            display:flex;
+            justify-content: flex-end;
+            align-items:center;
+        }
+        .navr>a{
+            text-decoration:  none;
+            margin: 0 1.5vw;
+        }
+        @media only screen and (max-width: 600px){
+            .ctnav{
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .logo{
+                width: 100%;
+                
+            }
+            .navct{
+                width: 100%;
+            }
+            .navr{
+                width: 100%;
+                height: 200px;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="nav">
+        <div class="ctnav">
+            <div class="logo">logo</div>
+            <div class="navct">导航栏中部</div>
+            <div class="navr">
+                <a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a>
+            </div>
+        </div>
+    </header>
+    <main class="mianct">
+        <section class="sc1"></section>
+        <section class="sc2"></section>
+    </main>
+    <footer class="foot">
+        <div class="foot-2"></div>
+        <div class="foot-1"></div>
+    </footer>
+</body>
+</html>

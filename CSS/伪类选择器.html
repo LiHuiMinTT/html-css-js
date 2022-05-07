@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选中p元素，要求p是其父元素的第一个元素 */
+        /* p:first-child {
+            background-color: aqua;
+        }
+
+        div :first-child {
+            background-color: blue;
+        }
+        p{
+            background-color: rebeccapurple;
+        }
+        body :first-child{
+            background-color: aqua;
+        }
+        div p:empty{
+            border: 2px solid red;
+        }
+        body :only-of-type{
+            background-color: yellow;
+        } */
+        /* div :only-child{
+            background-color: pink;
+            color: white;
+        } */
+        /* div:only-of-type {
+            background-color: red;
+        } */
+        /* div :first-of-type {
+            background-color: red;
+            cursor:cell;
+        } */
+        /* div ::first-letter {
+            background-color: red;
+            cursor:cell;
+        } */
+        /* span::first-letter{
+            font-size: 150%;
+        }
+        p::first-letter{
+            font-size: 150%;
+        } */
+        div + ::after{
+            content: 'after';
+        }
+    </style>
+</head>
+
+<body>
+    <span>
+        first-child
+    </span>
+    <p></p>
+    <div>
+        <span></span>
+        <p>.0</p>
+    </div>
+    <div>
+        1111
+        <div>
+            <!--  -->
+            <a href="">00</a>
+            <p>hello</p>
+        </div>
+        <div>
+            <div>12344</div>
+            <div>454</div>
+        </div>
+        <p>
+            123
+        <div style="display: inline;">div
+        <div>999</div>
+    </div>
+        </p>
+    </div>
+    <header>111</header>
+    <div>
+        <p>
+            gaoshaofei
+        </p>
+    </div>
+</body>
+
+</html>
