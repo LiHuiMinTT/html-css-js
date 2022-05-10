@@ -36,17 +36,70 @@
         // const mp = new Map([['name','lihuimin']]);
         // console.log(Object.values(mp));//[]
 
-        class Person{
-            constructor(name){
-                this.name = name;
+        // class Person{
+        //     constructor(name){
+        //         this.name = name;
+        //     }
+        //     showName(){
+        //         console.log(this.name);
+        //     }
+        // }
+        // Person.age = 18;
+        // const p = new Person('lit')
+        // console.log(Object.getPrototypeOf(p).constructor.age);
+        // const p = {};
+        // Object.defineProperty(p,'name',{
+        //     enumerable:true,
+        //     value:'Lihuimin',
+        //     configurable:true
+        // })
+        // console.log(p);
+        // p.name = 'lt';
+        // console.log(p);
+        // console.log(Object.getOwnPropertyDescriptor(p,'name'));
+        // p[Symbol.for('hello')] = 'hello';
+        // console.log(p[Symbol.for('hello')]);
+        // for (const key in p) {
+        //     console.log(key);
+        // }
+        // console.log(Object.getOwnPropertyDescriptor(p,Symbol.for('hello')));
+        // for (const key in p) {
+        //     console.log(key);
+        // }
+        // console.dir(Object.getOwnPropertySymbols(p));
+        // const p1 = {
+        //     name:'lhm'
+        // }
+        // const p2 = {
+        //     age:'20',
+        //     sex:'man'
+        // }
+        // console.log(p2);
+        // const p3 = Object.assign(p1,p2);
+        // console.log(p1);
+        // function person(){
+
+        // }
+        // const per1 = new person();
+        // console.dir(person);
+        // console.log(per1);
+        class person {
+            constructor(){
+
             }
-            showName(){
-                console.log(this.name);
+            static show(){
+                console.log('show');
+            }
+            static shout(){
+                console.log('shout');
+            }
+            show(){
+
             }
         }
-        Person.age = 18;
-        const p = new Person('lit')
-        console.log(Object.getPrototypeOf(p).constructor.age);
+        console.dir(person);
+        person.shout();
+        person.show();
     </script>
 </body>
 </html>

@@ -53,7 +53,45 @@
         //yield只能直接在生成器函数中使用，如果生成器函数内部定义非生成器函数，
         //在非生成器内部调用yield也不行
 
+    function * n(n){
+        for(let i =0;i<n;i++){
+            yield i;
+            yield i+2;
+        }
+    }
+    const iter = n(3);
+    console.log('---------------');
+    console.log(iter.next());
+    console.log(iter.next());
+    console.log(iter.next());
+    console.log(iter.next());
+console.log('//////////');
+    function * nT(n){
+        if(n>0){
+            yield * nT(n-1);
+            yield n-1;
+        }else{
+            return 100
+        }
         
+    }
+    console.log('test');
+    for (const i of nT(3)) {
+        console.log(i);
+    }
+    // const iter1 = nT(3);
+    // console.log(iter1.next());
+    // console.log(iter1.next());
+    // console.log(iter1.next());
+    // console.log(iter1.next());
+    function * test(x){
+        let y = yield(x + 6);
+        console.log(y,'y');
+        return y;
+    }
+    const testi = test(8);
+    console.log(testi.next());
+    console.log(testi.next());
     </script>
 </body>
 </html>

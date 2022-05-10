@@ -7,25 +7,59 @@
     <title>Document</title>
 </head>
 <body>
+    <button id="bu">to baidu</button>
     <script>
-        function myfun(){
-            function show(){
-                console.log('1213');
-            }
-            show();
-        }
+        document.querySelector('#bu').addEventListener('click',()=>{
+            location = 'http://www.baidu.com'
+        })
+        // function myfun(){
+        //     function show(){
+        //         console.log('1213');
+        //     }
+        //     show();
+        // }
         
-        console.log(myfun);
-        let x = 1;
-        setTimeout(() => {
-            x = 2;
-            console.log(x);
-        }, 1000);
-        console.log(x);
-        setTimeout(() => {
-            console.log(x);
-        }, 1000);
-        console.log(x);
+        // console.log(myfun);
+        // let x = 1;
+        // setTimeout(() => {
+        //     x = 2;
+        //     console.log(x);
+        // }, 1000);
+        // console.log(x);
+        // setTimeout(() => {
+        //     console.log(x);
+        // }, 1000);
+        // console.log(x);
+        // function show(a,b){
+        //     console.log(arguments);
+        //     console.log(b);
+        //     console.log('---------');
+        //     arguments[1] = '通过argument赋值的b值';
+        //     console.log(arguments,'new arguments');
+        //     console.log(b);
+        //     console.log(a,b);
+        //     a = 'new a'
+        //     console.log(arguments[0]);
+        //     arguments[0] = 23;
+        //     console.log(a);//23
+        // }
+        // show(1);
+        //私有变量
+        class p{
+            constructor(name,age){
+                const syp = Symbol(name);
+                let p = new function(){
+                    this[syp] = name;
+                    this.age = age;
+                    this.showname = function(){
+                        return this[syp];
+                    }
+                }
+                return p;
+            }
+        }
+        const p1 = new p('李辉民',22);
+        console.log(p1.showname());
     </script>
 </body>
 </html>

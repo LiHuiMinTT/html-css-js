@@ -54,13 +54,9 @@
         });
         document.getElementById('bt4').addEventListener('click',()=>{
             location.replace('https://www.baidu.com');
-            setTimeout(() => {
-                console.log(location.href);
-            }, 1000);
         });
         document.getElementById('bt5').addEventListener('click',()=>{
             setTimeout(() => {
-                location.reload();//可能从本地缓存重新加载
                 location.reload(true);//强制从服务器重新加载
             }, 1000);
         });
@@ -74,10 +70,10 @@
             let state = event.state;
             console.log(state);
             console.log(history.state,'his');
-            setTimeout(() => {
-                history.replaceState({name:'lt'},'mytitle');
-                console.log(history.state);
-            }, 2000);
+            // setTimeout(() => {
+            //     history.replaceState({name:'lt'},'mytitle');
+            //     console.log(history.state);
+            // }, 2000);
         })
     //     console.log(document.body.hasChildNodes());//true
     //     console.log(document.getElementsByTagName('span')[0].hasChildNodes());//true
@@ -86,9 +82,9 @@
     //    console.log(newele.childNodes);
     //    newele.normalize();
     //     console.log(newele.childNodes);
-    //     document.getElementById('bt8').addEventListener('click',()=>{
-    //         document.title = 'lt'
-    //     });
+        document.getElementById('bt8').addEventListener('click',()=>{
+            document.title = 'lt'
+        });
     //     console.log((document.getElementById('d')).getElementsByTagName('div'));//keyi
     //     console.log((document.getElementById('d')).getElementsByClassName('div1'));//keyi
         // console.log((document.getElementById('d')).getElementById('div1'));//不可以
