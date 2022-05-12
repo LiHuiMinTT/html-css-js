@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var missingNumber = function (nums) {
+
+        //     let head = 0, wei = nums.length - 1;
+        //     let mid = (head + wei) / 2;
+        //     if (nums[wei] == wei) {
+        //         return wei + 1;
+        //     };
+        //     if (nums[0] != 0) {
+        //         return 0
+        //     };
+        //     while (head < wei) {
+        //         if (nums[mid] == mid) {
+        //             head = mid;
+        //         } else {
+        //             wei = mid - 1;
+        //         }
+        //         mid = Math.floor((head + wei) / 2);
+        //         console.log(head,mid,wei);
+        //         // 112
+        //         if (head == mid) {
+        //             return head + 1;
+        //         }
+        //     };
+        //     return mid + 1;
+        // };
+        // console.log(missingNumber([0,1,2,4,5,6,7,8,9]));
+        // var a = 1;
+        // function b() {
+        //     var a;
+        //     a = 10;
+        //     // a = function() { };
+        //     return;
+        // }
+        // b();
+        // console.log(a);
+        // var twoSum = function (nums, target) {
+        //     for (let head = 0; head < nums.length - 1; head++) {
+        //         for (let w = head++; w < nums.length; w++) {
+        //             console.log(head,w);
+        //             if (nums[head] + nums[w] == target) {
+        //                 return [head, w];
+        //             }
+        //         }
+        //     };
+        //     return 0;
+        // };
+        // console.log(twoSum([3,2,3],6))
+        // var twoSum = function (nums, target) {
+        //     const map = new Map();
+        //     for (let head = 0; head < nums.length - 1; head++) {
+        //         map.set(target - nums[head],head);
+        //         if(map.has(nums[head+1])){
+        //             return [head+1,map.get(head+1)]
+        //         }
+        //     };
+        // };
+        // const map = new Map();
+        // map.set(1,2);
+        // map.set('1',3)
+        // console.log(map);
+        // console.log(map.get('1'));
+        var twoSum = function (nums, target) {
+            const map = new Map();
+            for (let head = 0; head < nums.length - 1; head++) {
+                //map存储key为当前遍历位置值的互补值:value为对应的index
+                map.set(target - nums[head],head);
+                if(map.has(nums[head+1])){
+                    console.log(map);
+                    return [map.get(nums[head+1]),head+1]
+                }
+            };
+
+        };
+        console.log(twoSum([1,3,4,8,5,6],5));
+        console.log((3+2)/2);
+    </script>
+</body>
+
+</html>
