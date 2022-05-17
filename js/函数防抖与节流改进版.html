@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button id="button">submit</button>
+    <script>
+        document.getElementById('button').addEventListener('click',throttle(submit,1000),false);
+
+        function submit(e){
+            console.log(e),
+            console.log(this);
+        }
+        function debounce(fn,timeout){
+            let t = null;
+
+            return function(){
+                if(t){
+                    clearTimeout(t);
+                }
+                if(!t){
+                    fn.apply(this,arguments);
+                    t = setTimeout(() => {
+                       t = null;
+                    }, timeout);
+                }
+            }
+
+        }
+        function debounce1(fn,timeout){
+            let t = null;
+            return function(){
+                if(t){
+                    clearTimeout(t)
+                }
+                t = setTimeout(() => {
+                    fn.apply(this,arguments);
+                }, timeout);
+            }
+
+        }
+        //节流函数
+        function throttle(fn,timeout){
+            let t = null;
+            return function(){
+                if(t){return};
+                fn.apply(this,arguments);
+                t = setTimeout(()=>{
+                    clearTimeout(t);
+                    t = null;
+                },timeout)
+            }
+        }
+    </script>
+</body>
+</html>

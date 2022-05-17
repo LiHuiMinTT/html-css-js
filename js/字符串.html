@@ -4,19 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no;">
     <title>Document</title>
 </head>
 
-<body>
-    <div id="div"></div>
+<body>'
+    <button onclick="go()">gobottom</button>
+    <div id="div">
+        <div id="one" class="one two three">one <span>span</span>one</div>
+        <div id="two">two</div>
+    </div>
 
+ 
+    <div id="other" style="height: 2000px;">111111</div>
+    0
+    <span id="he">hello</span>
     <script>
-        console.log(Promise.all([1,2,3,4,5,6,7,Promise.reject(2)]).catch((data)=>{
-            console.log(data);
-        }));
-        console.log([1,23,4].slice(0));
-        
+        function go(){
+            console.log('1111');
+            document.getElementById('he').scrollIntoView();
+        };
+        // console.log(Promise.all([1,2,3,4,5,6,7,Promise.reject(2)]).catch((data)=>{
+        //     console.log(data);
+        // }));
+        // console.log([1,23,4].slice(0));
+        console.log(document.querySelectorAll('div'));
+        console.log(document.getElementsByTagName('div'));
+        console.log(document.getElementById('one'));
+        let div = document.getElementById('one');
+        console.log(div.classList);
+        div.setAttribute('class','o');
+        console.log(div.classList.toggle('o1'));
+        console.log(div.innerText);
+        div.appendChild(document.createTextNode('<h1>123456</h1>'))
+        console.log(div.firstChild.nodeType);
+        div.firstChild.nodeValue='0<h1>123456</h1>0'
+        console.log(document.querySelectorAll('div'),'static');
+        console.log(document.getElementsByTagName('div'));
+        console.log('12345678'.substring(2,5))
     </script>
 </body>
 
