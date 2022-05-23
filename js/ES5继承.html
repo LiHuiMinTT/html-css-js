@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function Human(name){
+        //     this.name = name;
+        // }
+        // Human.prototype.getName = function(){
+        //     return this.name;
+        // }
+        // function Man(name){
+        //     Human.call(this,name)
+        // }
+        // Man.prototype = Object.create(Human.prototype);
+        // Man.prototype.constructor = Man;
+
+        // const m1 = new Man('李辉民');
+        // console.log(m1.name)
+        // console.log(m1.getName(),'111');
+        // const obj = {
+        //     show:()=>{
+        //         console.log(this);
+        //     }
+        // }
+        // const newO = {
+        //     show:obj.show
+        // }
+        // obj.show();
+        // newO.show();
+        // function show(){
+        //     console.log(this)
+        // }
+        // var p = {
+        //     show:show
+        // }
+        // p.show()
+        // var fun = p.show;
+        // fun();
+        // const p = {
+        //     name:'lihuimin'
+        // }
+        // function cha(p){
+        //     p.name = 'lt'
+        // }
+        // cha(p);
+        // console.log(p);
+        // const p = {
+        //     b:'waiceb',
+
+        //     p: {
+        //         b: this,
+        //         a: this.b,
+        //         show: () => {
+        //             console.log(this);
+        //         }
+        //     }
+
+        // }
+        // p.p.show();
+        // console.log(p.p);
+var a = 5
+{
+   let a = 6
+{
+ 
+ let a=5;
+  
+let func3=()=>{
+  
+ console.log('a',this.a)//作用域是在和这个for循环块里面，  5
+ }
+
+  
+ func3();//a undefined
+}
+}        
+
+ 
+    </script>
+</body>
+
+</html>

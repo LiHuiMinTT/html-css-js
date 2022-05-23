@@ -56,6 +56,30 @@
                 },timeout)
             }
         }
+
+        function debounce01(fn,timeout){
+            let t = null;
+            return function(){
+                if(t){
+                    clearTimeout(t);
+                }else{
+                    fn.apply(this,arguments)
+                    t = setTimeout(() => {
+                       t = null; 
+                    }, timeout);
+                }
+            }
+        }
+        function debounce02(fn,timeout){
+            let t = null;
+            return function(){
+                clearTimeout(t);
+                t = setTimeout(() => {
+                    fn.apply(this,arguments);
+                }, timeout);
+            }
+        }
+        
     </script>
 </body>
 </html>
